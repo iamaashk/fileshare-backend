@@ -2,8 +2,6 @@ import File from "../models/file.js";
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 
-const BASE_URL = process.BASE_URL;
-
 export const uploadImage = async (request, response)=>{
     const fileObj ={
         path: request.file.path,
@@ -11,7 +9,7 @@ export const uploadImage = async (request, response)=>{
     }
     try {
        const  file = await File.create(fileObj);
-       response.status(200).json({path:`fileshare-iamaashk.netlify.app/file/${file._id}`});
+       response.status(200).json({path:`https://fileshare-iamaashk.netlify.app/file/${file._id}`});
         
     } catch (error) {
         console.error(error.message);
