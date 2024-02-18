@@ -8,7 +8,7 @@ app.use(cors());
 
 app.use('/', router);
 
-const PORT = process.env.PORT || 8000;
+const PORT = `https://fileshare-backed-iamaashk.onrender.com` || 8000;
 
 DBConnection();
 

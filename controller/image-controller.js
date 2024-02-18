@@ -1,4 +1,6 @@
 import File from "../models/file.js";
+import dotenv from 'dotenv';
+import bcrypt from 'bcrypt';
 
 const BASE_URL = process.BASE_URL;
 
@@ -9,7 +11,7 @@ export const uploadImage = async (request, response)=>{
     }
     try {
        const  file = await File.create(fileObj);
-       response.status(200).json({path:`${BASE_URL}/file/${file._id}`})
+       response.status(200).json({path:`http://localhost:${process.env.PORT}/file/${file._id}`});
         
     } catch (error) {
         console.error(error.message);
