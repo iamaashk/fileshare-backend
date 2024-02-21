@@ -8,7 +8,7 @@ app.use(cors());
 
 app.use('/', router);
 
-const PORT = `https://fileshare-backed-iamaashk.netlify.com` || 8000;
+const PORT = `https://fileshare-backed-iamaashk.netlify.com` || 5000;
 
 DBConnection();
 
