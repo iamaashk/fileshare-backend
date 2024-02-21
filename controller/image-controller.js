@@ -8,7 +8,7 @@ export const uploadImage = async (request, response)=>{
     }
     try {
        const  file = await File.create(fileObj);
-       response.status(200).json({path:`https://fileshare-iamaashk.netlify.app/file/${file._id}`});
+       response.status(200).json({path:`fileshare-iamaashk.netlify.app/file/${file._id}`});
         
     } catch (error) {
         console.error(error.message);
@@ -29,6 +29,6 @@ export const downloadImage = async (request, response)=>{
         
     } catch (error) {
         console.error(error.message);
-        return response.status(500),json({error: error.message});
+        return response.status(500).json({ error: error.message });
     }
 }
